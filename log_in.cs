@@ -140,5 +140,25 @@ namespace for_video
         {
 
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            DataBase dataBase = new DataBase();
+            if (dataBase.CheckDB() == true)
+            {
+                MessageBox.Show("База данных существует>");
+               
+            }
+            else
+            {
+                MessageBox.Show("База данных не существует. СОЗДАНИЕ БАЗЫ ДАННЫХ");
+                dataBase.createMyDataBase();
+            }
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
