@@ -7,8 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using test_DataBase;
 
-namespace ReformatorXMLWindowsForms
+namespace for_video
 {
     public partial class Form1 : Form
     {
@@ -20,6 +21,12 @@ namespace ReformatorXMLWindowsForms
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Transformation.Trans();
+            MessageBox.Show("Создан файл Employees.xml");
         }
     }
 }

@@ -146,12 +146,12 @@ namespace for_video
             DataBase dataBase = new DataBase();
             if (dataBase.CheckDB() == true)
             {
-                MessageBox.Show("База данных существует>");
+                MessageBox.Show("База данных существует!");
                
             }
             else
             {
-                MessageBox.Show("База данных не существует. СОЗДАНИЕ БАЗЫ ДАННЫХ");
+                MessageBox.Show("СОЗДАНИЕ БАЗЫ ДАННЫХ");
                 dataBase.createMyDataBase();
             }
         }

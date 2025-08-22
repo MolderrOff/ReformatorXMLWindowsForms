@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Data>
+  <Employee>
+    <FullName>Иванов Иван Иванович</FullName>
+    <JobTitle>Разработчик</JobTitle>
+    <Salary>100000</Salary>
+  </Employee>
+  <Employee>
+    <FullName>Петров Петр Петрович</FullName>
+    <JobTitle>Тестировщик</JobTitle>
+    <Salary>80000</Salary>
+  </Employee>
+</Data>

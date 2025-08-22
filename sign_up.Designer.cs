@@ -50,7 +50,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(59, 18);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(84, 79);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -62,7 +62,7 @@
             this.panel1.Controls.Add(this.btnClear);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(167, 15);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(620, 79);
             this.panel1.TabIndex = 1;
@@ -71,7 +71,7 @@
             // 
             this.btnClear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClear.BackgroundImage")));
             this.btnClear.Location = new System.Drawing.Point(535, 4);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(81, 71);
             this.btnClear.TabIndex = 1;
@@ -94,7 +94,7 @@
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(519, 235);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(56, 52);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -106,7 +106,7 @@
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(519, 234);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(56, 53);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -117,7 +117,7 @@
             // textBox_login2
             // 
             this.textBox_login2.Location = new System.Drawing.Point(256, 202);
-            this.textBox_login2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_login2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_login2.Name = "textBox_login2";
             this.textBox_login2.Size = new System.Drawing.Size(223, 22);
             this.textBox_login2.TabIndex = 4;
@@ -125,7 +125,7 @@
             // textBox_password2
             // 
             this.textBox_password2.Location = new System.Drawing.Point(256, 235);
-            this.textBox_password2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_password2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_password2.Name = "textBox_password2";
             this.textBox_password2.Size = new System.Drawing.Size(223, 22);
             this.textBox_password2.TabIndex = 5;
@@ -133,7 +133,7 @@
             // btnCreate
             // 
             this.btnCreate.Location = new System.Drawing.Point(256, 270);
-            this.btnCreate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCreate.Margin = new System.Windows.Forms.Padding(4);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(224, 65);
             this.btnCreate.TabIndex = 6;
@@ -165,7 +165,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(929, 554);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnCreate);
@@ -175,7 +175,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "sign_up";
             this.Text = "sign_up";
             this.Load += new System.EventHandler(this.sign_up_Load);

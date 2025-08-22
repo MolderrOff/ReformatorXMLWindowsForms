@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using for_video;
 
-namespace ReformatorXMLWindowsForms
-{
+namespace for_video
+{ 
     internal static class Program
     {
         /// <summary>
@@ -18,6 +19,11 @@ namespace ReformatorXMLWindowsForms
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new log_in());
+
+
+
+
+
         }
     }
 }
