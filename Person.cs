@@ -18,11 +18,11 @@ namespace for_video
     public class Employee
     {
         [XmlAttribute]
-        public string Name;
+        public string name;
         [XmlAttribute]
-        public string Surname;
+        public string surname;
         [XmlAttribute]
-        public double QuarterAmount;
+        public double quarteramount;
         [XmlElement(typeof(Salary))]
         public Salary[] salary;
     }
