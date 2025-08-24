@@ -76,6 +76,10 @@ namespace for_video
         {
 
         }
-        
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            RewriteData1.RewriteFile();
+        }
     }
 }

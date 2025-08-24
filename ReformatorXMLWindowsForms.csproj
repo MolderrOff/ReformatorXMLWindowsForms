@@ -181,6 +181,7 @@
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RewriteData1.cs" />
     <Compile Include="sign_up.cs">
       <SubType>Form</SubType>
     </Compile>

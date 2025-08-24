@@ -33,17 +33,25 @@ namespace for_video
             // Добавление строк 
             string[,] employeesList = new string[6,4];
 
-            for (int i = 0; i < 6; i++)
+            try
             {
+                for (int i = 0; i < 6; i++)
+                {
                 employeesList[i, 0] = (Transformation.payDouble.item[i].Name).ToString();
                 employeesList[i, 1] = (Transformation.payDouble.item[i].Surname).ToString();
                 employeesList[i, 2] = (Transformation.payDouble.item[i].Amount).ToString();
                 employeesList[i, 3] = (Transformation.payDouble.item[i].Mount).ToString();
+                }
             }
-           
+            catch
+            {
+                MessageBox.Show("Невозможно отобразить, сначала \t В исходный файл Data1.xml в элемент Pay " +
+                    "дописывает атрибут, который отражает сумму всех amount");
+            }   
+            
             string[] row1 = new string[] { employeesList[0, 0], employeesList[0, 1], employeesList[0, 2], employeesList[0, 3] };
-            dataGridView1.Rows.Add(row1);
-            for (int i = 1; i < 6; i++)
+            dataGridView1.Rows.Add(row1);            
+            for (int i = 1; i < 6; i++)            
             {
                 row1 = new string[] { employeesList[i, 0], employeesList[i, 1], employeesList[i, 2], employeesList[i, 3] };
                 dataGridView1.Rows.Add(row1);
