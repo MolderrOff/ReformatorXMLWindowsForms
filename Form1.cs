@@ -17,7 +17,7 @@ namespace for_video
         public Form1()
         {
             InitializeComponent();
-            Console.WriteLine("Иниц");
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -35,6 +35,11 @@ namespace for_video
         private void button2_Click(object sender, EventArgs e)
         {
             Transformation.RecordSalary(); //подсчитать сумму всех amount/@salary 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Transformation.SumAmount();
         }
     }
 }

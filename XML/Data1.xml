@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Data>
-  <Employee>
-    <FullName>Иванов Иван Иванович</FullName>
-    <JobTitle>Разработчик</JobTitle>
-    <Salary>100000</Salary>
-  </Employee>
-  <Employee>
-    <FullName>Петров Петр Петрович</FullName>
-    <JobTitle>Тестировщик</JobTitle>
-    <Salary>80000</Salary>
-  </Employee>
-</Data>
+<Pay>
+	<item name="Lena" surname="Ivanova" amount="1001.1" mount="march"/>
+	<item name="Lena" surname="Ivanova" amount="2001" mount="january"/>
+	<item name="Lena" surname="Ivanova" amount="3001.10" mount="february"/>
+	<item name="Masha" surname="Ivanova" amount="1000" mount="march"/>
+	<item name="Masha" surname="Ivanova" amount="2000.0" mount="january"/>
+	<item name="Masha" surname="Ivanova" amount="3000" mount="february"/>	
+</Pay>
