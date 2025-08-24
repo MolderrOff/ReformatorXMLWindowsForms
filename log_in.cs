@@ -57,10 +57,8 @@ namespace for_video
                 if (table.Rows.Count == 1)
                 {
                     MessageBox.Show("Вы успешно вошли!", "Успешно!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //MessageBox.Show("Из log_in.cs btnEnter_Click сообщение 2");
-                    Form1 frm1 = new Form1(); //было
-                    //Form2 frm1 = new Form2(); //cтало
-                    //Form3 frm1 = new Form3(); //cтало
+                  
+                    Form1 frm1 = new Form1(); 
                     this.Hide();
                     frm1.ShowDialog();
                     this.Show();
@@ -157,6 +155,11 @@ namespace for_video
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

@@ -8,16 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using System.Xml.Linq;
 using System.Xml.Serialization;
 using System.Xml.Xsl;
 using for_video;
+using org.apache.xml.resolver.helpers;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 
 namespace for_video
 {
 
     public class Transformation
-    {
+    {     
+        public static Pay payDouble = new Pay();
+        
         /// <summary>
         /// XSLT преобразование, создание файла  employees.xml
         /// </summary>
@@ -51,6 +56,9 @@ namespace for_video
                 Console.WriteLine("Ошибка при преобразовании: " + ex.Message);
             }
         }
+        /// <summary>
+        /// дописывает в элемент Employee атрибут, который отражает сумму всех amount/@salary этого элемента
+        /// </summary>
         public static void RecordSalary()
         {
             string outputFile = "Employees.xml";
@@ -94,21 +102,10 @@ namespace for_video
                 Employees newemployees = xmlSerializer.Deserialize(fs) as Employees;
 
                 if (newemployees != null)
-                {
-                    Console.WriteLine("До сериализации");
-                    ////xmlSerializer.Serialize(fs, newemployees);  //Console.Out
-
-                    Console.WriteLine("завершено xmlSerializer.Serialize(Console.Out, newemployees); ");
+                {                   
+                    xmlSerializer.Serialize(fs, newemployees);  
+                    Console.WriteLine("завершено xmlSerializer.Serialize(Console.Out, newemployees);");    
                     Console.WriteLine("");
-                    Console.WriteLine($"newemployees.Employee[0].Name  = >> {newemployees.Employee[0].name} << ");
-                    Console.WriteLine($"newemployees.Employee[0].salary[0].Amount  = >>{newemployees.Employee[0].salary[0].Amount}<< ");
-
-
-                    Console.WriteLine($"newemployees.Employee[0].Surname  = {newemployees.Employee[0].surname}");
-                    Console.WriteLine($"newemployees.Employee[0].QuarterAmount  = {newemployees.Employee[0].quarteramount}");
-                 
-                    Console.WriteLine("");
-                    Console.WriteLine("Подсчёт зарплаты за квартал:");
                     newemployees.Employee[0].quarteramount =
                     newemployees.Employee[0].salary[0].Amount +
                     newemployees.Employee[0].salary[1].Amount +
@@ -145,23 +142,25 @@ namespace for_video
 
                 xmlSerializer.Serialize(fs, employeesDouble);
                 MessageBox.Show(" Подсчитана зарплата за квартал в файле \r Дописан в элемент <Employee> атрибут <quarteramount> - сумма всех <amount/@salary> в файле: " + outputFile);
-
+                xmlSerializer.Serialize(Console.Out, employeesDouble);  //fs, newemployees); //Console.Out
             }
         }
+        /// <summary>
+        /// 3.	В исходный файл Data1.xml в элемент Pay дописывает атрибут, который отражает сумму всех amount
+        /// </summary>
 
         public static void SumAmount()
-        {
-            string inputFile = "Data1.xml";
-            Pay pay = new Pay();
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(Pay));
+        {           
 
-            Pay payDouble = new Pay();
+            string inputFile = "Data1.xml";
+            
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(Pay));
 
             payDouble.AllMount = 0;
             payDouble.item = new Item[6];
             for (int i = 0; i < 6; i++)
             {
-                payDouble.item[i] = new Item(); //???
+                payDouble.item[i] = new Item(); 
                 payDouble.item[i].Name = "testName";
                 payDouble.item[i].Surname = "testSur";
                 payDouble.item[i].Amount = 0;
@@ -199,9 +198,29 @@ namespace for_video
             using (FileStream fs = new FileStream(inputFile, FileMode.OpenOrCreate))
             {
                 xmlSerializer.Serialize(fs, payDouble);
-                MessageBox.Show("Cумма всех <amount> файла Data1.xml подсчитана \r Результат в <AllMount>");
-                Console.WriteLine("Cумма всех <amount> подсчитана \r Результат в <AllMount> ");
-            }
+                MessageBox.Show("Cумма всех <amount> подсчитана \r Результат в  <AllMount> элемента <Pay> файла Data1.xml");
+                Console.WriteLine("Cумма всех <amount> подсчитана \r Результат в  <AllMount> элемента <Pay> файла Data1.xml");
+                xmlSerializer.Serialize(Console.Out, payDouble);
+            }  
         }
+        /// <summary>
+        /// отображением списка всех Employee и сумму всех выплат (amount) по месяцам (mount).
+        /// </summary>
+        public static void ListEntityes()
+        {
+            string inputFile = "Data1.xml";
+
+            XDocument doc = XDocument.Load(inputFile);
+            var items = doc.Descendants("Pay") 
+                   .Select(x => new Item 
+                   {
+                       Name = x.Attribute("Name").Value,
+                       Surname = x.Element("Surname").Value,
+                       Amount = int.Parse(x.Element("Mount").Value),
+                       Mount = x.Element("Mount").Value
+                   }).ToList();
+        }
+
+
     }
 }

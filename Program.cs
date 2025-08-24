@@ -7,6 +7,8 @@ using System.Windows.Forms;
 using for_video;
 using System.Diagnostics;
 using Microsoft.Extensions.Logging;
+using System.Xml;
+using System.Xml.Linq;
 
 
 namespace for_video
